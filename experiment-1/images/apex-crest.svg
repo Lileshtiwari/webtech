@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Shield Base -->
+  <defs>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Shield -->
+  <path d="M32 4L54 12V32C54 44.5 44.5 55.5 32 60C19.5 55.5 10 44.5 10 32V12L32 4Z" fill="url(#shieldGrad)" stroke="#38BDF8" stroke-width="2"/>
+  
+  <!-- Inner Shield Trim -->
+  <path d="M32 9L49 15.5V31.5C49 41.5 41.5 50.5 32 54.5C22.5 50.5 15 41.5 15 31.5V15.5L32 9Z" stroke="#F59E0B" stroke-width="1.2" stroke-opacity="0.6" fill="none"/>
+  
+  <!-- Academic Torch & Circuit Nodes -->
+  <!-- Torch / Central Spire -->
+  <path d="M32 16L34.5 24H29.5L32 16Z" fill="url(#goldGrad)"/>
+  <circle cx="32" cy="15" r="2.5" fill="#FDE68A"/>
+  <path d="M30 24H34V35H30V24Z" fill="url(#goldGrad)"/>
+  
+  <!-- Circuit Nodes & Computing Lines -->
+  <path d="M24 30H29V32H24V30Z" fill="url(#cyanGrad)"/>
+  <circle cx="23" cy="31" r="2" fill="#38BDF8"/>
+  <path d="M35 30H40V32H35V30Z" fill="url(#cyanGrad)"/>
+  <circle cx="41" cy="31" r="2" fill="#38BDF8"/>
+  
+  <path d="M26 38H30V40H26V38Z" fill="url(#cyanGrad)"/>
+  <circle cx="25" cy="39" r="2" fill="#38BDF8"/>
+  <path d="M34 38H38V40H34V38Z" fill="url(#cyanGrad)"/>
+  <circle cx="39" cy="39" r="2" fill="#38BDF8"/>
+
+  <!-- Open Academic Book Arc -->
+  <path d="M22 46C26 43 30 43.5 32 45C34 43.5 38 43 42 46V49C38 46 34 46.5 32 48C30 46.5 26 46 22 49V46Z" fill="#F8FAFC"/>
+  <!-- Central Star -->
+  <polygon points="32,49 33,52 36,52 33.5,53.5 34.5,56 32,54.5 29.5,56 30.5,53.5 28,52 31,52" fill="#F59E0B"/>
+</svg>

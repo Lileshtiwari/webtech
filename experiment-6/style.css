@@ -1,0 +1,854 @@
+/* ===================================================================
+   Foco - Gourmet Food Delivery Application Stylesheet
+   Directly Recreating the Reference Visual Style & Layout (Image 3)
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+
+:root {
+  --foco-bg: #FFFFFF;
+  --foco-dark-slate: #181A20;
+  --foco-dark-curve: #222630;
+  --foco-orange: #FF7A00;
+  --foco-orange-light: #FFF4EB;
+  --foco-yellow: #FFC043;
+  --foco-text-main: #11142D;
+  --foco-text-muted: #808191;
+  --foco-border: #E4E4E4;
+}
+
+body.foco-theme {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #F7F8FA;
+  color: var(--foco-text-main);
+  margin: 0;
+  padding: 0;
+}
+
+/* Foco App Container & Card Frame */
+.foco-master-wrapper {
+  max-width: 1320px;
+  margin: 1.5rem auto 4rem;
+  background: #FFFFFF;
+  border-radius: 36px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #ECEEF2;
+}
+
+/* Foco Header */
+.foco-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 3.5rem;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+}
+
+.foco-brand {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #11142D;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  text-decoration: none;
+}
+
+.foco-brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--foco-orange);
+  display: inline-block;
+}
+
+.foco-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  list-style: none;
+}
+
+.foco-nav-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #11142D;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.foco-nav-link:hover, .foco-nav-link.active {
+  color: var(--foco-orange);
+}
+
+.foco-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.foco-search-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #11142D;
+  display: flex;
+  align-items: center;
+}
+
+.foco-cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #11142D;
+  text-decoration: none;
+}
+
+.foco-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #FF3B30;
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foco-auth-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-foco-signin {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #11142D;
+  background: #F4F5F7;
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-foco-login {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #11142D;
+  background: var(--foco-yellow);
+  padding: 0.55rem 1.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ===================================================================
+   HERO BANNER SECTION (EXACTLY MATCHING IMAGE 3)
+   =================================================================== */
+.foco-hero {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  padding: 1rem 3.5rem 3.5rem;
+}
+
+@media (min-width: 960px) {
+  .foco-hero {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+/* Dark Slate Curved Backdrop on Right (matching Image 3) */
+.foco-hero-dark-curve {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 100%;
+  background: radial-gradient(circle at 60% 40%, #2A2F3D 0%, #15171E 100%);
+  border-top-left-radius: 380px;
+  border-bottom-left-radius: 380px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Left Hero Copy & Actions */
+.foco-hero-left {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2rem;
+}
+
+.foco-hero-title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: #11142D;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 1100px) {
+  .foco-hero-title {
+    font-size: 4rem;
+  }
+}
+
+.foco-hero-sub {
+  font-size: 0.95rem;
+  color: var(--foco-text-muted);
+  line-height: 1.6;
+  max-width: 440px;
+  margin-bottom: 2rem;
+}
+
+.foco-price-counter-row {
+  margin-bottom: 2rem;
+}
+
+.foco-total-order-label {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #11142D;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.foco-total-order-label span.price-val {
+  color: #11142D;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.foco-order-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Quantity stepper matching Image 3: [v] 2 [^] */
+.foco-qty-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid #E2E8F0;
+  border-radius: 9999px;
+  padding: 0.5rem 0.85rem;
+  background: #FFFFFF;
+}
+
+.foco-qty-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #808191;
+  padding: 2px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foco-qty-btn:hover {
+  color: #11142D;
+}
+
+.foco-qty-num {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #11142D;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* Buy Now pill button matching Image 3 */
+.btn-foco-buy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #11142D;
+  color: #FFFFFF !important;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.6rem 1.6rem 0.6rem 0.7rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 20px rgba(17, 20, 45, 0.2);
+  transition: all 0.2s;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-foco-buy:hover {
+  background: #232742;
+  transform: translateY(-2px);
+}
+
+.btn-foco-buy-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--foco-yellow);
+  color: #11142D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bottom Category Pills Carousel (matching Image 3) */
+.foco-carousel-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.foco-carousel-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 0.85rem 0.85rem 1rem;
+  width: 90px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+  border: 1px solid #F0F2F5;
+  transition: all 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.foco-carousel-card:hover, .foco-carousel-card.active {
+  border-color: var(--foco-orange);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(255, 122, 0, 0.12);
+}
+
+.foco-carousel-img-circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+  overflow: hidden;
+  background: #FFF7ED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foco-carousel-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #11142D;
+  margin-bottom: 2px;
+}
+
+.foco-carousel-price {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #16A34A;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.foco-carousel-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #808191;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.foco-carousel-nav-btn:hover {
+  background: #11142D;
+  color: #FFFFFF;
+  border-color: #11142D;
+}
+
+/* Right Section: Giant Bowl & Floating Garnishes (matching Image 3) */
+.foco-hero-right {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foco-bowl-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
+.foco-bowl-img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.35));
+}
+
+/* Floating garnish SVGs */
+.foco-floating-garnish {
+  position: absolute;
+  pointer-events: none;
+}
+
+.garnish-chili {
+  bottom: 20px;
+  right: -25px;
+  width: 65px;
+  transform: rotate(-15deg);
+}
+
+.garnish-tomato {
+  bottom: 80px;
+  right: 50px;
+  width: 38px;
+}
+
+.garnish-parsley {
+  top: 180px;
+  right: -20px;
+  width: 40px;
+}
+
+.garnish-olive {
+  top: 150px;
+  left: -20px;
+  width: 24px;
+}
+
+/* Floating Orange Delivery Badge (matching Image 3) */
+.foco-floating-badge {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: var(--foco-orange);
+  border-radius: 20px;
+  padding: 1.25rem 1.4rem;
+  color: #FFFFFF;
+  box-shadow: 0 15px 30px rgba(255, 122, 0, 0.35);
+  min-width: 140px;
+  z-index: 15;
+}
+
+.foco-badge-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.foco-badge-food-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.foco-badge-rating {
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.foco-badge-time-pill {
+  background: #11142D;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ===================================================================
+   MENU CATALOG SECTION WITH FILTERS & RECOMMENDATIONS
+   =================================================================== */
+.foco-menu-section {
+  padding: 3.5rem 3.5rem 4rem;
+  border-top: 1px solid #ECEEF2;
+}
+
+.foco-section-heading-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.foco-section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #11142D;
+}
+
+.foco-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Category Filter Tabs */
+.foco-cat-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.foco-cat-tab {
+  padding: 0.55rem 1.35rem;
+  border-radius: 9999px;
+  background: #F4F5F7;
+  color: #11142D;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.foco-cat-tab:hover, .foco-cat-tab.active {
+  background: var(--foco-orange);
+  color: #FFFFFF !important;
+}
+
+/* Menu Grid */
+.foco-food-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .foco-food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .foco-food-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.foco-food-card {
+  background: #FFFFFF;
+  border: 1px solid #EFEFEF;
+  border-radius: 24px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.foco-food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+  border-color: #E2E8F0;
+}
+
+.foco-food-thumb-wrap {
+  width: 100%;
+  height: 160px;
+  border-radius: 18px;
+  background: #FAF7F2;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.foco-food-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foco-food-badge-recom {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: var(--foco-yellow);
+  color: #11142D;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.foco-card-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #11142D;
+  margin-bottom: 0.35rem;
+}
+
+.foco-card-desc {
+  font-size: 0.8rem;
+  color: var(--foco-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.foco-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid #F4F5F7;
+}
+
+.foco-card-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #11142D;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.btn-foco-add {
+  background: #11142D;
+  color: #FFFFFF !important;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-foco-add:hover {
+  background: var(--foco-orange);
+  transform: scale(1.08);
+}
+
+/* Auth styles for foco */
+.foco-auth-container {
+  min-height: calc(100vh - 260px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.foco-auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 2.75rem 2.5rem;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.07);
+  border: 1px solid #ECEEF2;
+}
+
+.foco-auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.foco-auth-header h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #11142D;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+.foco-auth-header p {
+  color: var(--foco-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.foco-input-group {
+  margin-bottom: 1.25rem;
+}
+
+.foco-input-label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #11142D;
+  margin-bottom: 0.4rem;
+}
+
+.foco-input-control {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border-radius: 14px;
+  border: 1.5px solid #E2E8F0;
+  font-family: inherit;
+  font-size: 0.925rem;
+  color: #11142D;
+  background: #FAFAFC;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.foco-input-control:focus {
+  border-color: var(--foco-orange);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.12);
+}
+
+.foco-btn-primary {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  border-radius: 9999px;
+  background: #11142D;
+  color: #FFFFFF;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.foco-btn-primary:hover {
+  background: var(--foco-orange);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(255, 122, 0, 0.25);
+}
+
+/* Toast Notification */
+.foco-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #11142D;
+  color: #FFFFFF;
+  padding: 0.9rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 9999;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.foco-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.foco-toast-badge {
+  background: var(--foco-orange);
+  color: #FFFFFF;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* Centered Standard Product Footer */
+.foco-centered-footer {
+  padding: 3.5rem 2rem 2.5rem;
+  background: #FFFFFF;
+  border-top: 1px solid #ECEEF2;
+  text-align: center;
+}
+
+.foco-footer-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #11142D;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.foco-footer-desc {
+  font-size: 0.875rem;
+  color: var(--foco-text-muted);
+  max-width: 520px;
+  margin: 0 auto 1.25rem;
+  line-height: 1.6;
+}
+
+.foco-footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 9999px;
+  color: #1E293B;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  background: #FFFFFF;
+}
+
+.foco-footer-btn:hover {
+  background: #F8FAFC;
+  border-color: #94A3B8;
+  color: var(--foco-orange);
+}
+
+.foco-footer-copy {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #F1F5F9;
+  font-size: 0.8rem;
+  color: #94A3B8;
+}
+
+.foco-designer-tag {
+  font-weight: 700;
+  color: #475569;
+}
+

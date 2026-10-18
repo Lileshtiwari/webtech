@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none">
+  <rect width="320" height="200" rx="12" fill="#FDF4FF"/>
+  <!-- Graduation / Academic Excellence Motif -->
+  <path d="M160 50L80 90L160 130L240 90L160 50Z" fill="#A855F7"/>
+  <path d="M120 110V145C120 160 160 170 160 170C160 170 200 160 200 145V110" fill="#9333EA"/>
+  <!-- Tassel -->
+  <path d="M220 100V135" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="220" cy="138" r="4" fill="#F59E0B"/>
+</svg>

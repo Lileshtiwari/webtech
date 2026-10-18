@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none">
+  <rect width="160" height="120" rx="12" fill="#FDF2F8"/>
+  <!-- Glass Jar -->
+  <path d="M55 35L60 98H100L105 35H55Z" fill="#FCE7F3" stroke="#F472B6" stroke-width="1.5"/>
+  <!-- Smoothie Liquid -->
+  <path d="M57 48L61 95H99L103 48H57Z" fill="#EC4899"/>
+  <!-- Mango wave swirl -->
+  <path d="M60 70C70 65 85 75 98 68L99 95H61L60 70Z" fill="#F59E0B"/>
+  <!-- Whipped cream top -->
+  <path d="M53 38C53 32 62 30 70 33C75 28 85 28 90 33C98 30 107 32 107 38H53Z" fill="#FFFFFF"/>
+  <!-- Straw -->
+  <path d="M84 15L94 50" stroke="#8B5CF6" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" fill="none">
+  <!-- Experiment 3: User Registration Form Validation -->
+  <rect width="240" height="140" rx="10" fill="#F8FAFC"/>
+  <!-- Form Card -->
+  <rect x="25" y="15" width="130" height="110" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <!-- Field 1 with success badge -->
+  <rect x="35" y="24" width="40" height="4" rx="1.5" fill="#64748B"/>
+  <rect x="35" y="32" width="105" height="14" rx="3" fill="#F8FAFC" stroke="#10B981"/>
+  <circle cx="132" cy="39" r="4" fill="#10B981"/>
+  <path d="M130 39L131.5 40.5L134 37.5" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Field 2 Email -->
+  <rect x="35" y="52" width="30" height="4" rx="1.5" fill="#64748B"/>
+  <rect x="35" y="60" width="105" height="14" rx="3" fill="#F8FAFC" stroke="#CBD5E1"/>
+
+  <!-- Field 3 Password with bullets -->
+  <rect x="35" y="80" width="45" height="4" rx="1.5" fill="#64748B"/>
+  <rect x="35" y="88" width="105" height="14" rx="3" fill="#F8FAFC" stroke="#4F46E5"/>
+  <circle cx="43" cy="95" r="2" fill="#0F172A"/>
+  <circle cx="50" cy="95" r="2" fill="#0F172A"/>
+  <circle cx="57" cy="95" r="2" fill="#0F172A"/>
+  <circle cx="64" cy="95" r="2" fill="#0F172A"/>
+  <circle cx="71" cy="95" r="2" fill="#0F172A"/>
+
+  <rect x="35" y="108" width="60" height="10" rx="3" fill="#4F46E5"/>
+
+  <!-- Right Shield & Checkmark Floating Card -->
+  <g transform="translate(165, 25)">
+    <rect x="0" y="0" width="55" height="75" rx="8" fill="#EEF2FF" stroke="#C7D2FE"/>
+    <!-- Security Shield -->
+    <path d="M27.5 16L14 22V36C14 46 27.5 53 27.5 53C27.5 53 41 46 41 36V22L27.5 16Z" fill="#4F46E5"/>
+    <path d="M22 35L26 39L33 30" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="10" y="62" width="35" height="4" rx="2" fill="#818CF8"/>
+  </g>
+</svg>

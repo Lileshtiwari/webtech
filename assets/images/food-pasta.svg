@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none">
+  <rect width="160" height="120" rx="12" fill="#F1F5F9"/>
+  <!-- Plate -->
+  <ellipse cx="80" cy="72" rx="60" ry="32" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <ellipse cx="80" cy="72" rx="42" ry="22" fill="#FEF3C7"/>
+  <!-- Pasta Ribbons -->
+  <path d="M52 66C58 52 70 76 82 58C94 76 106 54 112 70" stroke="#F59E0B" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M56 74C64 62 76 80 88 64C98 80 104 68 108 76" stroke="#F59E0B" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <!-- Mushroom slices -->
+  <path d="M68 62C68 56 76 56 76 62V67H68V62Z" fill="#78350F"/>
+  <path d="M88 68C88 62 96 62 96 68V73H88V68Z" fill="#78350F"/>
+  <!-- Parsley sprinkles -->
+  <circle cx="78" cy="65" r="2" fill="#15803D"/>
+  <circle cx="85" cy="60" r="2" fill="#15803D"/>
+  <circle cx="95" cy="62" r="1.5" fill="#15803D"/>
+</svg>

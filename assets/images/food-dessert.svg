@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none">
+  <rect width="160" height="120" rx="12" fill="#FDF4FF"/>
+  <!-- Dessert Plate -->
+  <ellipse cx="80" cy="85" rx="55" ry="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- Cake Base -->
+  <path d="M50 82L58 48H102L110 82C100 88 60 88 50 82Z" fill="#3B1E08"/>
+  <ellipse cx="80" cy="48" rx="22" ry="7" fill="#4B280E"/>
+  <!-- Molten Lava Flow -->
+  <path d="M72 48C72 60 88 60 88 48C88 65 72 65 72 82C75 84 85 84 88 82" stroke="#1C0D02" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- Powder dusting / Raspberry garnish -->
+  <circle cx="80" cy="38" r="5" fill="#DC2626"/>
+  <circle cx="76" cy="36" r="3" fill="#DC2626"/>
+  <circle cx="84" cy="36" r="3" fill="#DC2626"/>
+  <path d="M80 34V30C80 30 84 28 86 26" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+</svg>

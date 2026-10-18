@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Experiment 1: University Web Design Graduation Cap -->
+  <circle cx="32" cy="32" r="30" fill="#FFEDD5"/>
+  <path d="M32 18L14 26L32 34L50 26L32 18Z" fill="#EA580C"/>
+  <path d="M20 31V41C20 44 25 47 32 47C39 47 44 44 44 41V31" fill="#C2410C"/>
+  <path d="M47 28V43" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="47" cy="44" r="3" fill="#EA580C"/>
+  <rect x="22" y="49" width="20" height="4" rx="2" fill="#FDBA74"/>
+</svg>

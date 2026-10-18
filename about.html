@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About WebTech Hub - Discover our engineering philosophy, architectural foundation, and reach out via our contact portal.">
+  <title>About &amp; Contact | WebTech Engineering Hub</title>
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    .about-hero {
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.06) 0%, transparent 60%);
+    }
+    .about-hero-title {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      line-height: 1.15;
+      color: #0E1726;
+      margin-bottom: 1rem;
+    }
+    .about-hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-body);
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.65;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+      margin-bottom: 5rem;
+    }
+    .about-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-2xl);
+      padding: 3rem;
+      box-shadow: 0 4px 20px -2px rgba(14, 23, 38, 0.06);
+    }
+    .about-card h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #0E1726;
+      margin-bottom: 1.25rem;
+    }
+    .about-card p {
+      color: var(--text-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .social-links-bar {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-light);
+    }
+    .social-circle-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #F8FAFC;
+      border: 1.5px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+    .social-circle-btn:hover {
+      background: #0E1726;
+      color: #FFFFFF;
+      border-color: #0E1726;
+      transform: translateY(-2px);
+    }
+    .contact-form-group {
+      margin-bottom: 1.35rem;
+    }
+    .contact-form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #0E1726;
+      margin-bottom: 0.45rem;
+    }
+    .contact-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #0E1726;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+    .contact-input:focus {
+      outline: none;
+      border-color: #4F46E5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    }
+    .btn-send-contact {
+      width: 100%;
+      background: #0E1726;
+      color: #FFFFFF;
+      border: none;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-send-contact:hover {
+      background: #4F46E5;
+      transform: translateY(-1px);
+    }
+    .contact-alert {
+      display: none;
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      color: #065F46;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    @media (max-width: 960px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .about-card {
+        padding: 2rem;
+      }
+      .about-hero-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- Top Navigation Bar -->
+  <header class="hub-nav">
+    <div class="container hub-nav-inner">
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="assets/images/platform_logo.png" alt="WebTech Platform Logo" style="height: 56px; width: auto;">
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#experiments" class="nav-link">Experiments</a></li>
+          <li><a href="index.html#pillars" class="nav-link">Highlights</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <a href="index.html#experiments" class="nav-cta-btn">
+          <span>Explore Labs</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Hero -->
+    <section class="about-hero">
+      <div class="container">
+        <h1 class="about-hero-title">About WebTech Hub</h1>
+        <p class="about-hero-sub">
+          A modern, cohesive web engineering ecosystem uniting six production platforms — from semantic layouts and asynchronous REST clients to relational database transactional architectures.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content & Contact Grid -->
+    <section class="container">
+      <div class="about-grid">
+        
+        <!-- Left: Platform Mission & Socials -->
+        <div class="about-card">
+          <h2>Engineering Philosophy</h2>
+          <p>
+            WebTech Hub was built to move beyond standard academic demonstrations and deliver realistic, high-fidelity software products. Each of the six included platforms is engineered with independent branding, dedicated typography, bespoke SVG vector emblems, and production-tested code.
+          </p>
+          <p>
+            From clinical biometrics and zero-trust developer authentication to global geopolitical intelligence, conference ticketing, and gourmet on-demand delivery — every module adheres strictly to contemporary UI/UX aesthetics and reliable engineering standards.
+          </p>
+
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: #0E1726; margin-top: 1.75rem; margin-bottom: 0.5rem;">Connect With Us</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Follow our open developments, contribute feedback, or reach out to the engineering team across our social network channels:
+          </p>
+
+          <!-- Social Media Icons Bar -->
+          <div class="social-links-bar">
+            <!-- Twitter / X -->
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Twitter / X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.5 1.5 0 1 0-.01-3 1.5 1.5 0 0 0 .01 3m1.39 9.74v-8.37H5.07v8.37z"/>
+              </svg>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21.58 7.19a2.5 2.5 0 0 0-1.76-1.77C18.26 5 12 5 12 5s-6.26 0-7.82.42A2.5 2.5 0 0 0 2.42 7.19C2 8.76 2 12 2 12s0 3.24.42 4.81a2.5 2.5 0 0 0 1.76 1.77C5.74 19 12 19 12 19s6.26 0 7.82-.42a2.5 2.5 0 0 0 1.76-1.77C22 15.24 22 12 22 12s0-3.24-.42-4.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Contact Form -->
+        <div class="about-card">
+          <h2>Get in Touch</h2>
+          <p>Have an inquiry, feedback, or suggestion regarding the web platform? Send us a direct message below.</p>
+
+          <div id="contactAlert" class="contact-alert">
+            Message received successfully! We will get back to you shortly.
+          </div>
+
+          <form id="aboutContactForm" onsubmit="event.preventDefault(); document.getElementById('contactAlert').style.display='block'; this.reset();">
+            <div class="contact-form-group">
+              <label for="contactName">Your Full Name</label>
+              <input type="text" id="contactName" class="contact-input" placeholder="e.g. Rachel Adams" required>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" class="contact-input" placeholder="rachel@example.com" required>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" class="contact-input" placeholder="e.g. Platform Architecture Inquiry" required>
+            </div>
+
+            <div class="contact-form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="4" class="contact-input" placeholder="Type your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-send-contact">Send Message &rarr;</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Dark Editorial Footer (matching Reference Image 1) -->
+  <footer class="ref-footer">
+    <div class="container">
+      
+      <div class="ref-footer-top">
+        <a href="index.html" class="brand-link">
+          <img src="assets/images/platform_logo.png" alt="WebTech Platform Logo" style="height: 56px; width: auto; filter: brightness(0) invert(1);">
+        </a>
+
+        <!-- Social Media Circular SVG Links -->
+        <div class="ref-footer-socials">
+          <a href="#" class="social-circle-btn" style="width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); color: #CBD5E1; display: flex; align-items: center; justify-content: center; text-decoration: none;" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" style="width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); color: #CBD5E1; display: flex; align-items: center; justify-content: center; text-decoration: none;" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.5 1.5 0 1 0-.01-3 1.5 1.5 0 0 0 .01 3m1.39 9.74v-8.37H5.07v8.37z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" style="width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); color: #CBD5E1; display: flex; align-items: center; justify-content: center; text-decoration: none;" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" style="width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); color: #CBD5E1; display: flex; align-items: center; justify-content: center; text-decoration: none;" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.58 7.19a2.5 2.5 0 0 0-1.76-1.77C18.26 5 12 5 12 5s-6.26 0-7.82.42A2.5 2.5 0 0 0 2.42 7.19C2 8.76 2 12 2 12s0 3.24.42 4.81a2.5 2.5 0 0 0 1.76 1.77C5.74 19 12 19 12 19s6.26 0 7.82-.42a2.5 2.5 0 0 0 1.76-1.77C22 15.24 22 12 22 12s0-3.24-.42-4.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="ref-footer-cols">
+        <div class="ref-footer-col">
+          <h4>Platform Hub</h4>
+          <ul class="ref-footer-links">
+            <li><a href="index.html#experiments">Lab Experiments</a></li>
+            <li><a href="index.html#pillars">Core Architecture</a></li>
+            <li><a href="about.html">About Platform</a></li>
+          </ul>
+        </div>
+        <div class="ref-footer-col">
+          <h4>Experiments 1–3</h4>
+          <ul class="ref-footer-links">
+            <li><a href="experiment-1/index.html">Exp 1: Static Webpage</a></li>
+            <li><a href="experiment-2/index.html">Exp 2: Clinical BMI Suite</a></li>
+            <li><a href="experiment-3/index.html">Exp 3: Registration Validation</a></li>
+          </ul>
+        </div>
+        <div class="ref-footer-col">
+          <h4>Experiments 4–6</h4>
+          <ul class="ref-footer-links">
+            <li><a href="experiment-4/index.html">Exp 4: REST Countries API</a></li>
+            <li><a href="experiment-5/index.php">Exp 5: EventPulse Platform</a></li>
+            <li><a href="experiment-6/index.php">Exp 6: foco Food Delivery</a></li>
+          </ul>
+        </div>
+        <div class="ref-footer-col">
+          <h4>Curriculum & Standards</h4>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: #94A3B8;">
+            A unified web technology platform showcasing pure HTML5, CSS3, modern JavaScript, and transactional PHP &amp; MySQL architectures.
+          </p>
+        </div>
+      </div>
+
+      <div class="ref-footer-bottom">
+        <div>&copy; 2026 WebTech Engineering Suite. All rights reserved.</div>
+        <div>Designed By Lilesh Kumar Tiwari</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

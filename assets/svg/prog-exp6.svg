@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Experiment 6: Gourmet Food Cloche & Delivery -->
+  <circle cx="32" cy="32" r="30" fill="#FFE4E6"/>
+  <path d="M18 36C18 26 24 20 32 20C40 20 46 26 46 36H18Z" fill="#E11D48"/>
+  <circle cx="32" cy="18" r="3" fill="#BE123C"/>
+  <rect x="15" y="36" width="34" height="4" rx="2" fill="#BE123C"/>
+  <path d="M22 43H42" stroke="#FDA4AF" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none">
+  <rect width="160" height="120" rx="12" fill="#ECFDF5"/>
+  <!-- Salad Bowl -->
+  <path d="M30 60C30 90 52 100 80 100C108 100 130 90 130 60H30Z" fill="#10B981"/>
+  <ellipse cx="80" cy="60" rx="50" ry="12" fill="#34D399"/>
+  <!-- Leaves & greens -->
+  <circle cx="65" cy="52" r="10" fill="#059669"/>
+  <circle cx="85" cy="48" r="12" fill="#047857"/>
+  <circle cx="102" cy="54" r="9" fill="#10B981"/>
+  <!-- Cherry tomatoes -->
+  <circle cx="60" cy="56" r="6" fill="#EF4444"/>
+  <circle cx="88" cy="58" r="7" fill="#EF4444"/>
+  <!-- Cucumber slices & Feta cubes -->
+  <circle cx="74" cy="52" r="5" fill="#BBF7D0" stroke="#16A34A" stroke-width="2"/>
+  <circle cx="98" cy="50" r="5" fill="#BBF7D0" stroke="#16A34A" stroke-width="2"/>
+  <rect x="70" y="60" width="8" height="8" rx="1.5" fill="#FFFFFF"/>
+  <rect x="85" y="44" width="8" height="8" rx="1.5" fill="#FFFFFF"/>
+</svg>

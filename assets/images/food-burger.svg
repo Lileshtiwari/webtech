@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none">
+  <rect width="160" height="120" rx="12" fill="#FEF3C7"/>
+  <!-- Top Bun -->
+  <path d="M35 55C35 32 55 24 80 24C105 24 125 32 125 55H35Z" fill="#D97706"/>
+  <!-- Sesame seeds -->
+  <circle cx="65" cy="38" r="2" fill="#FEF3C7"/>
+  <circle cx="80" cy="32" r="2" fill="#FEF3C7"/>
+  <circle cx="95" cy="38" r="2" fill="#FEF3C7"/>
+  <circle cx="72" cy="46" r="2" fill="#FEF3C7"/>
+  <circle cx="88" cy="46" r="2" fill="#FEF3C7"/>
+  <!-- Lettuce -->
+  <path d="M30 58C36 53 44 61 52 56C60 51 68 59 76 54C84 49 92 57 100 52C108 47 116 55 124 50C128 54 130 58 130 58H30Z" fill="#10B981"/>
+  <!-- Cheese slice -->
+  <path d="M36 60H124L110 74L75 64H36V60Z" fill="#FBBF24"/>
+  <!-- Patty -->
+  <rect x="34" y="65" width="92" height="14" rx="7" fill="#78350F"/>
+  <!-- Tomato slices -->
+  <rect x="42" y="61" width="36" height="5" rx="2" fill="#EF4444"/>
+  <rect x="82" y="61" width="36" height="5" rx="2" fill="#EF4444"/>
+  <!-- Bottom Bun -->
+  <rect x="38" y="80" width="84" height="16" rx="8" fill="#D97706"/>
+</svg>

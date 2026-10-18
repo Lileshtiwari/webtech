@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Global Country Explorer - Search and browse sovereign nations of the world, capitals, demographics, flags, currencies, and geography.">
+  <title>Global Country Explorer | Nations, Capitals & Demographics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main Navigation Header -->
+  <header class="terra-header">
+    <div class="terra-container header-inner">
+      <a href="index.html" class="terra-brand">
+        <img src="terrascope-logo.svg" alt="TerraScope Logo" width="46" height="46">
+        <div class="brand-titles">
+          <span class="brand-name">Terra<span class="brand-accent">Scope</span></span>
+          <span class="brand-sub">Global Country Explorer</span>
+        </div>
+      </a>
+
+      <nav class="terra-nav">
+        <ul class="nav-list">
+          <li><a href="#explorer" class="nav-link">Nations Directory</a></li>
+          <li><a href="#telemetry" class="nav-link">Demographics</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero & Overview Section -->
+  <section class="hero-telemetry" id="telemetry">
+    <div class="terra-container">
+      <div class="hero-content">
+        <span class="badge-terra">REST API Exploration</span>
+        <h1 class="hero-title">Explore World Nations &amp; <span class="gradient-text">Geopolitical Data</span></h1>
+        <p class="hero-sub">
+          Browse sovereign nations across all continents with population statistics, capital cities, official currencies, and interactive maps powered by the public REST Countries API.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="stats-strip">
+          <div class="stat-cell">
+            <span class="stat-num" id="statTotalNations">250</span>
+            <span class="stat-lbl">Total Nations</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num" id="statGlobalPop">8.04B</span>
+            <span class="stat-lbl">World Population</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num" id="statUnMembers">193</span>
+            <span class="stat-lbl">UN Member States</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num" id="statVisibleCount">250</span>
+            <span class="stat-lbl">Filtered Results</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explorer & Filter Toolbar -->
+  <main class="terra-main" id="explorer">
+    <div class="terra-container">
+
+      <!-- Filter Controls Card -->
+      <div class="filter-toolbar">
+        <div class="search-input-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search by nation name, capital city, or code..." oninput="handleSearch(this.value)">
+          <button type="button" class="btn-clear-search" id="btnClearSearch" onclick="clearSearch()" style="display: none;">&times;</button>
+        </div>
+
+        <!-- Region Filter Pills -->
+        <div class="region-pills" role="group" aria-label="Filter by Region">
+          <button type="button" class="pill-btn active" onclick="setRegionFilter('all')">All Continents</button>
+          <button type="button" class="pill-btn" onclick="setRegionFilter('Asia')">Asia</button>
+          <button type="button" class="pill-btn" onclick="setRegionFilter('Europe')">Europe</button>
+          <button type="button" class="pill-btn" onclick="setRegionFilter('Africa')">Africa</button>
+          <button type="button" class="pill-btn" onclick="setRegionFilter('Americas')">Americas</button>
+          <button type="button" class="pill-btn" onclick="setRegionFilter('Oceania')">Oceania</button>
+        </div>
+
+        <!-- Sort Select -->
+        <div class="sort-wrap">
+          <label for="sortSelect">Sort By:</label>
+          <select id="sortSelect" class="sort-select" onchange="handleSort(this.value)">
+            <option value="pop-desc">Population: High to Low</option>
+            <option value="pop-asc">Population: Low to High</option>
+            <option value="name-asc">Country Name: A &rarr; Z</option>
+            <option value="name-desc">Country Name: Z &rarr; A</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div class="loading-state" id="loadingState">
+        <div class="spinner"></div>
+        <p>Loading country directory data...</p>
+      </div>
+
+      <!-- Error State -->
+      <div class="error-state" id="errorState" style="display: none;">
+        <div class="error-box">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <div class="error-copy">
+            <h3>Notice</h3>
+            <p id="errorMsg">Displaying comprehensive cached international country directory.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Countries Grid Container -->
+      <div class="countries-grid" id="countriesGrid">
+        <!-- Dynamically rendered country cards with fully visible square-like flag boxes -->
+      </div>
+
+      <!-- Zero Results State -->
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <h3>No matching nations found</h3>
+        <p>Try adjusting your search criteria or resetting region filters.</p>
+        <button type="button" class="btn-reset-filters" onclick="resetFilters()">Reset All Filters</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Interactive Nation Dossier Modal -->
+  <div class="modal-backdrop" id="dossierModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-row">
+          <img id="modalFlag" src="" alt="Flag" class="modal-flag-thumb">
+          <div>
+            <h2 id="modalCountryName">Country Name</h2>
+            <span class="modal-official-name" id="modalOfficialName">Official Name</span>
+          </div>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeDossierModal()">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-stats-grid">
+          <div class="m-stat-card">
+            <span class="m-stat-lbl">Capital City</span>
+            <span class="m-stat-val" id="modalCapital">Capital</span>
+          </div>
+          <div class="m-stat-card">
+            <span class="m-stat-lbl">Region / Subregion</span>
+            <span class="m-stat-val" id="modalRegion">Region</span>
+          </div>
+          <div class="m-stat-card">
+            <span class="m-stat-lbl">Total Population</span>
+            <span class="m-stat-val" id="modalPopulation">0</span>
+          </div>
+          <div class="m-stat-card">
+            <span class="m-stat-lbl">Currencies</span>
+            <span class="m-stat-val" id="modalCurrencies">USD</span>
+          </div>
+        </div>
+
+        <div class="modal-detail-list">
+          <div class="detail-row">
+            <span class="d-label">Official Languages:</span>
+            <span class="d-val" id="modalLanguages">English</span>
+          </div>
+          <div class="detail-row">
+            <span class="d-label">ISO Alpha-3 Code:</span>
+            <span class="d-val" id="modalCca3">USA</span>
+          </div>
+          <div class="detail-row">
+            <span class="d-label">UN Membership:</span>
+            <span class="d-val" id="modalUnStatus">Member State</span>
+          </div>
+          <div class="detail-row">
+            <span class="d-label">Timezone(s):</span>
+            <span class="d-val" id="modalTimezones">UTC+00:00</span>
+          </div>
+          <div class="detail-row">
+            <span class="d-label">Land Borders:</span>
+            <div class="border-pills" id="modalBorders">
+              <!-- Border pills -->
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-action-row">
+          <a id="modalMapLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-open-map">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+              <line x1="8" y1="2" x2="8" y2="18"/>
+              <line x1="16" y1="6" x2="16" y2="22"/>
+            </svg>
+            <span>Open in Google Maps &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clean Unified Footer -->
+  <footer class="terra-footer" style="text-align: center; padding: 4.5rem 0 2rem;">
+    <div class="terra-container">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 2.5rem;">
+        <img src="terrascope-logo.svg" alt="TerraScope Logo" width="56" height="56" style="margin-bottom: 1.25rem;">
+        <span class="brand-name" style="color: #FFFFFF; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">Terra<span style="color: #10B981;">Scope</span></span>
+        <p style="color: #94A3B8; font-size: 0.95rem; max-width: 540px; margin: 0 auto 1.75rem auto; line-height: 1.6;">
+          Global Country Explorer — International demographic and geographic data portal powered by modern RESTful APIs.
+        </p>
+
+        <!-- Back to Main Button -->
+        <a href="../index.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.08); color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 999px; padding: 0.65rem 1.75rem; font-size: 0.875rem; text-decoration: none;">
+          <span>&larr; Return to Home Screen</span>
+        </a>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.75rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; color: #64748B; flex-wrap: wrap; gap: 1rem;">
+        <p>&copy; 2026 TerraScope Global Country Explorer. All rights reserved.</p>
+        <p>Designed By Lilesh Kumar Tiwari</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

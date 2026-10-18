@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" fill="none">
+  <!-- Experiment 6: Food Delivery System with PHP & MySQL -->
+  <rect width="240" height="140" rx="10" fill="#F8FAFC"/>
+  <!-- Cloche / Dish -->
+  <g transform="translate(25, 20)">
+    <rect x="0" y="0" width="85" height="100" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Dome Cloche -->
+    <path d="M18 64C18 42 32 30 42.5 30C53 30 67 42 67 64H18Z" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.8"/>
+    <circle cx="42.5" cy="27" r="4" fill="#4F46E5"/>
+    <!-- Base Plate -->
+    <rect x="12" y="64" width="61" height="6" rx="2" fill="#4F46E5"/>
+    <path d="M22 75H63" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+    <path d="M30 83H55" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Connective arrow -->
+  <path d="M116 70H132" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Delivery Express Order Card -->
+  <g transform="translate(136, 20)">
+    <rect x="0" y="0" width="80" height="100" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="8" y="10" width="64" height="14" rx="4" fill="#ECFDF5"/>
+    <text x="12" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700" fill="#065F46">DELIVERED</text>
+    
+    <!-- Delivery Scooter SVG representation -->
+    <circle cx="24" cy="62" r="8" fill="#F1F5F9" stroke="#0F172A" stroke-width="1.5"/>
+    <circle cx="56" cy="62" r="8" fill="#F1F5F9" stroke="#0F172A" stroke-width="1.5"/>
+    <path d="M24 62H40L50 48H32L24 62Z" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.5"/>
+    <path d="M48 48L54 36H60" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Delivery cargo box -->
+    <rect x="18" y="42" width="16" height="14" rx="2" fill="#4F46E5"/>
+    
+    <text x="14" y="86" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#4F46E5">Rs 438.00</text>
+  </g>
+</svg>

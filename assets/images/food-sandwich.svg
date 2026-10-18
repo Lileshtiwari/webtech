@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none">
+  <rect width="160" height="120" rx="12" fill="#FFFBEB"/>
+  <!-- Sandwich Triangle -->
+  <path d="M35 88L80 24L125 88H35Z" fill="#D97706"/>
+  <path d="M42 85L80 32L118 85H42Z" fill="#FEF3C7"/>
+  <!-- Layers: Cheddar, tomato, greens -->
+  <path d="M38 72L80 48L122 72" stroke="#10B981" stroke-width="4" stroke-linecap="round"/>
+  <path d="M40 78L80 54L120 78" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+  <path d="M42 84L80 60L118 84" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+</svg>

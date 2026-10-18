@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VitalScale Pro - Clinical Body Mass Index (BMI) & Metabolic Intelligence Platform. Calculate real-time BMI, ideal weight range, BMR, and body composition.">
+  <title>VitalScale Pro | Clinical BMI & Metabolic Health Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+  <!-- VitalScale Brand Header -->
+  <header class="vital-header">
+    <div class="vital-container header-inner">
+      <a href="index.html" class="vital-brand">
+        <img src="vital-logo.svg" alt="VitalScale Logo" width="46" height="46">
+        <div class="brand-titles">
+          <span class="brand-name">VitalScale<span class="brand-highlight">Pro</span></span>
+          <span class="brand-sub">Clinical Metabolic Intelligence</span>
+        </div>
+      </a>
+
+      <nav class="vital-nav">
+        <ul class="nav-list">
+          <li><a href="#calculator" class="nav-link">BMI Engine</a></li>
+          <li><a href="#bmr" class="nav-link">BMR & Calories</a></li>
+          <li><a href="#standards" class="nav-link">WHO Classifications</a></li>
+          <li><a href="#logSection" class="nav-link">Log History</a></li>
+          <li><a href="#calculator" class="nav-cta-btn">Calculate Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="vital-main">
+    
+    <!-- Hero Banner -->
+    <section class="vital-hero">
+      <div class="vital-container">
+        <div class="hero-content">
+          <span class="badge-vital">Precision Biometrics Engine</span>
+          <h1 class="hero-title">Assess Your Metabolic Health with <span class="gradient-text">Clinical Precision</span></h1>
+          <p class="hero-sub">
+            Calculate your Body Mass Index (BMI), uncover your personalized healthy weight bracket, and compute your basal daily caloric expenditure powered by verified epidemiological standards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calc-section">
+      <div class="vital-container">
+        <div class="calc-grid">
+
+          <!-- Left Column: Input Form & Sliders -->
+          <div class="calc-card input-card">
+            <div class="card-header-row">
+              <h2>Biometric Inputs</h2>
+              <!-- Unit Toggle -->
+              <div class="unit-toggle" role="group" aria-label="Measurement Units">
+                <button type="button" class="unit-btn active" id="btnMetric" onclick="setUnitSystem('metric')">Metric (cm, kg)</button>
+                <button type="button" class="unit-btn" id="btnImperial" onclick="setUnitSystem('imperial')">Imperial (ft/in, lbs)</button>
+              </div>
+            </div>
+
+            <form id="bmiForm" onsubmit="event.preventDefault(); calculateBMI();">
+              
+              <!-- Biological Sex & Age Row -->
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="genderSelect">Biological Sex</label>
+                  <select id="genderSelect" class="form-control" onchange="calculateBMI()">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Non-Binary / Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="ageInput">Age (Years)</label>
+                  <input type="number" id="ageInput" class="form-control" value="24" min="10" max="120" oninput="calculateBMI()">
+                </div>
+              </div>
+
+              <!-- Height Field (Metric Mode) -->
+              <div class="metric-fields" id="metricHeightGroup">
+                <div class="field-label-row">
+                  <label for="heightCm">Height (Centimeters)</label>
+                  <span class="live-val-display" id="displayHeightCm">175 cm</span>
+                </div>
+                <div class="input-slider-wrap">
+                  <input type="number" id="heightCm" class="form-control" value="175" min="90" max="250" step="0.5" oninput="syncHeightFromNumber(this.value)">
+                  <input type="range" id="sliderHeightCm" class="range-slider" value="175" min="90" max="240" step="1" oninput="syncHeightFromSlider(this.value)">
+                </div>
+              </div>
+
+              <!-- Height Field (Imperial Mode) -->
+              <div class="imperial-fields" id="imperialHeightGroup" style="display: none;">
+                <div class="field-label-row">
+                  <label>Height (Feet & Inches)</label>
+                  <span class="live-val-display" id="displayHeightImp">5 ft 9 in</span>
+                </div>
+                <div class="form-row-2">
+                  <input type="number" id="heightFeet" class="form-control" placeholder="Feet" value="5" min="3" max="8" oninput="updateImperialHeight()">
+                  <input type="number" id="heightInches" class="form-control" placeholder="Inches" value="9" min="0" max="11" oninput="updateImperialHeight()">
+                </div>
+              </div>
+
+              <!-- Weight Field (Metric Mode) -->
+              <div class="metric-fields" id="metricWeightGroup">
+                <div class="field-label-row">
+                  <label for="weightKg">Weight (Kilograms)</label>
+                  <span class="live-val-display" id="displayWeightKg">68 kg</span>
+                </div>
+                <div class="input-slider-wrap">
+                  <input type="number" id="weightKg" class="form-control" value="68" min="25" max="300" step="0.5" oninput="syncWeightFromNumber(this.value)">
+                  <input type="range" id="sliderWeightKg" class="range-slider" value="68" min="30" max="180" step="1" oninput="syncWeightFromSlider(this.value)">
+                </div>
+              </div>
+
+              <!-- Weight Field (Imperial Mode) -->
+              <div class="imperial-fields" id="imperialWeightGroup" style="display: none;">
+                <div class="field-label-row">
+                  <label for="weightLbs">Weight (Pounds / lbs)</label>
+                  <span class="live-val-display" id="displayWeightLbs">150 lbs</span>
+                </div>
+                <div class="input-slider-wrap">
+                  <input type="number" id="weightLbs" class="form-control" value="150" min="60" max="650" step="1" oninput="updateImperialWeight(this.value)">
+                  <input type="range" id="sliderWeightLbs" class="range-slider" value="150" min="60" max="400" step="1" oninput="updateImperialWeightFromSlider(this.value)">
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="form-actions-row">
+                <button type="button" class="btn-calc" onclick="calculateBMI()">Recalculate Metrics</button>
+                <button type="button" class="btn-reset" onclick="resetForm()">Reset Defaults</button>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Right Column: Interactive Gauge & Diagnostic Analysis -->
+          <div class="calc-card result-card">
+            <div class="result-top-banner">
+              <span class="diag-eyebrow">DIAGNOSTIC OUTCOME</span>
+              <div class="bmi-score-row">
+                <span class="bmi-number" id="bmiValue">22.2</span>
+                <div class="bmi-badge-wrap">
+                  <span class="badge-status badge-normal" id="bmiBadge">Normal Weight</span>
+                  <span class="bmi-desc-pill" id="bmiHealthyPill">Optimal Zone</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual Speedometer Gauge -->
+            <div class="gauge-container">
+              <svg class="gauge-svg" viewBox="0 0 320 180" width="100%">
+                <!-- Background Arcs for Underweight, Normal, Overweight, Obese -->
+                <!-- Underweight (Blue): 180 to 225 deg -->
+                <path d="M 40 160 A 120 120 0 0 1 75 75" fill="none" stroke="#38BDF8" stroke-width="22" stroke-linecap="round"/>
+                <!-- Normal (Green): 225 to 290 deg -->
+                <path d="M 85 66 A 120 120 0 0 1 200 48" fill="none" stroke="#10B981" stroke-width="22"/>
+                <!-- Overweight (Amber): 290 to 330 deg -->
+                <path d="M 212 52 A 120 120 0 0 1 258 92" fill="none" stroke="#F59E0B" stroke-width="22"/>
+                <!-- Obese (Red): 330 to 360 deg -->
+                <path d="M 264 100 A 120 120 0 0 1 280 160" fill="none" stroke="#EF4444" stroke-width="22" stroke-linecap="round"/>
+                
+                <!-- Center Pivot & Needle -->
+                <circle cx="160" cy="160" r="14" fill="#0F172A"/>
+                <circle cx="160" cy="160" r="6" fill="#38BDF8"/>
+                <line id="gaugeNeedle" x1="160" y1="160" x2="160" y2="55" stroke="#0F172A" stroke-width="4.5" stroke-linecap="round" style="transform-origin: 160px 160px; transform: rotate(-15deg); transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);"/>
+              </svg>
+
+              <div class="gauge-labels">
+                <span style="color: #0284C7;">&lt;18.5 Under</span>
+                <span style="color: #059669;">18.5-24.9 Normal</span>
+                <span style="color: #D97706;">25-29.9 Over</span>
+                <span style="color: #DC2626;">&ge;30 Obese</span>
+              </div>
+            </div>
+
+            <!-- Health Breakdown Metrics -->
+            <div class="metrics-grid">
+              <div class="metric-tile">
+                <span class="m-label">Ideal Weight Bracket</span>
+                <span class="m-val" id="idealWeightVal">56.7 &ndash; 76.3 kg</span>
+                <span class="m-sub">For 175 cm stature</span>
+              </div>
+
+              <div class="metric-tile" id="bmr">
+                <span class="m-label">Basal Metabolic Rate</span>
+                <span class="m-val" id="bmrVal">1,659 kcal</span>
+                <span class="m-sub">Mifflin-St Jeor Formula</span>
+              </div>
+
+              <div class="metric-tile">
+                <span class="m-label">Daily Maintenance</span>
+                <span class="m-val" id="calorieVal">2,281 kcal</span>
+                <span class="m-sub">Moderate activity level</span>
+              </div>
+
+              <div class="metric-tile">
+                <span class="m-label">Clinical Risk Profile</span>
+                <span class="m-val" id="healthRiskVal" style="color: #10B981;">Lowest Risk</span>
+                <span class="m-sub">Cardiovascular Index</span>
+              </div>
+            </div>
+
+            <!-- Tailored Recommendations -->
+            <div class="advice-box" id="adviceBox">
+              <div class="advice-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <p id="adviceText">
+                Your body composition falls within the clinically recommended weight range. Maintain balanced macronutrient intake, ensure 150 minutes of weekly aerobic exercise, and sustain current lifestyle habits.
+              </p>
+            </div>
+
+            <!-- Save to Log Button -->
+            <div class="card-footer-action">
+              <button type="button" class="btn-save-log" onclick="saveToHealthLog()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                  <polyline points="17 21 17 13 7 13 7 21"/>
+                  <polyline points="7 3 7 8 15 8"/>
+                </svg>
+                <span>Save to Health History Log</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Health History Log Section -->
+    <section id="logSection" class="log-section">
+      <div class="vital-container">
+        <div class="section-head-split">
+          <div>
+            <span class="badge-vital">Session Telemetry</span>
+            <h2 class="sub-heading">Biometric Health Log</h2>
+            <p class="sub-text">Calculations performed in this session are tracked here for historical reference.</p>
+          </div>
+          <div class="log-actions">
+            <button type="button" class="btn-secondary-sm" onclick="clearLog()">Clear History</button>
+            <button type="button" class="btn-primary-sm" onclick="exportLogCSV()">Export CSV</button>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <table class="log-table" id="logTable">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Sex / Age</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>BMI Result</th>
+                <th>Category</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="logTableBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- World Health Organization Standards Reference -->
+    <section id="standards" class="standards-section">
+      <div class="vital-container">
+        <div class="section-center-head">
+          <span class="badge-vital">Epidemiological Reference</span>
+          <h2 class="sub-heading">WHO International BMI Classifications</h2>
+          <p class="sub-text">Standard diagnostic intervals established by the World Health Organization for adults aged 18 and older.</p>
+        </div>
+
+        <div class="standards-grid">
+          <div class="standard-card border-under">
+            <span class="std-badge bg-blue-subtle">Severe / Mild Under</span>
+            <h3>&lt; 18.5</h3>
+            <span class="std-name">Underweight</span>
+            <p>Elevated risk of nutritional deficiency, weakened immune response, and osteoporosis. Clinical nutrition consultation advised.</p>
+          </div>
+
+          <div class="standard-card border-normal">
+            <span class="std-badge bg-green-subtle">Lowest Health Risk</span>
+            <h3>18.5 &ndash; 24.9</h3>
+            <span class="std-name">Normal Weight</span>
+            <p>Optimal range correlated with lowest incidence of cardiovascular disease, type-2 diabetes, and premature metabolic mortality.</p>
+          </div>
+
+          <div class="standard-card border-over">
+            <span class="std-badge bg-amber-subtle">Pre-Obese Zone</span>
+            <h3>25.0 &ndash; 29.9</h3>
+            <span class="std-name">Overweight</span>
+            <p>Moderate statistical increase in arterial hypertension, dyslipidemia, and metabolic strain. Caloric modulation recommended.</p>
+          </div>
+
+          <div class="standard-card border-obese">
+            <span class="std-badge bg-red-subtle">High Clinical Risk</span>
+            <h3>&ge; 30.0</h3>
+            <span class="std-name">Obese (Class I-III)</span>
+            <p>Significant risk of chronic cardio-metabolic disorders, obstructive sleep apnea, and osteoarthritis. Comprehensive medical guidance advised.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VitalScale Footer -->
+  <footer class="vital-footer" style="text-align: center; padding: 4.5rem 0 2rem;">
+    <div class="vital-container">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 2.5rem;">
+        <img src="vital-logo.svg" alt="VitalScale Logo" width="56" height="56" style="margin-bottom: 1.25rem;">
+        <span class="brand-name" style="color: #FFFFFF; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">VitalScale<span style="color: #06B6D4;">Pro</span></span>
+        <p style="color: #94A3B8; font-size: 0.95rem; max-width: 540px; margin: 0 auto 1.75rem auto; line-height: 1.6;">
+          Clinical metabolic assessment and biometric intelligence engine. Verified against international epidemiological health benchmarks.
+        </p>
+
+        <!-- Back to Main Button -->
+        <a href="../index.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.08); color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 999px; padding: 0.65rem 1.75rem; font-size: 0.875rem; text-decoration: none;">
+          <span>&larr; Return to Home Screen</span>
+        </a>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.75rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; color: #64748B; flex-wrap: wrap; gap: 1rem;">
+        <p>&copy; 2026 VitalScale Pro Health Systems. All rights reserved.</p>
+        <p>Designed By Lilesh Kumar Tiwari</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

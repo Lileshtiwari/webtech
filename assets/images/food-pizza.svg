@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none">
+  <rect width="160" height="120" rx="12" fill="#FEE2E2"/>
+  <!-- Crust Slice -->
+  <path d="M80 18L135 96C105 106 55 106 25 96L80 18Z" fill="#F59E0B"/>
+  <path d="M80 28L126 92C101 100 59 100 34 92L80 28Z" fill="#FDE68A"/>
+  <!-- Tomato sauce spots -->
+  <circle cx="80" cy="50" r="7" fill="#EF4444"/>
+  <circle cx="65" cy="70" r="8" fill="#EF4444"/>
+  <circle cx="95" cy="74" r="7" fill="#EF4444"/>
+  <!-- Basil leaves -->
+  <ellipse cx="74" cy="58" rx="5" ry="3" fill="#10B981" transform="rotate(-30 74 58)"/>
+  <ellipse cx="88" cy="64" rx="5" ry="3" fill="#10B981" transform="rotate(45 88 64)"/>
+  <ellipse cx="60" cy="82" rx="4" ry="2.5" fill="#10B981" transform="rotate(15 60 82)"/>
+  <!-- Mozzarella dollops -->
+  <circle cx="78" cy="78" r="6" fill="#FFFFFF"/>
+  <circle cx="98" cy="88" r="5" fill="#FFFFFF"/>
+  <circle cx="50" cy="85" r="5" fill="#FFFFFF"/>
+</svg>

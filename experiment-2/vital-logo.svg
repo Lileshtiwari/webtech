@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="vitalGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="pulseGrad" x1="0" y1="0" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Rounded Square Icon Badge -->
+  <rect width="64" height="64" rx="16" fill="#0F172A"/>
+  
+  <!-- Precision Scale Ring -->
+  <circle cx="32" cy="32" r="23" stroke="url(#vitalGrad)" stroke-width="3" stroke-dasharray="110 35" stroke-linecap="round"/>
+  
+  <!-- Scale Platform / Balance Pivot -->
+  <path d="M22 44H42" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 44V34" stroke="#64748B" stroke-width="2"/>
+  
+  <!-- ECG / Vital Heartbeat Pulse Line -->
+  <path d="M17 32H23L27 24L31 38L35 28L38 34L41 32H47" stroke="url(#pulseGrad)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Top Dial Indicator -->
+  <circle cx="32" cy="13" r="3" fill="#06B6D4"/>
+</svg>

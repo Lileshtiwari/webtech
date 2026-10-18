@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" fill="none">
+  <!-- Experiment 2: BMI Calculator -->
+  <rect width="240" height="140" rx="10" fill="#F8FAFC"/>
+  <!-- Calculator Device Frame -->
+  <rect x="25" y="15" width="95" height="110" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="33" y="24" width="79" height="26" rx="5" fill="#0F172A"/>
+  <text x="40" y="42" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#38BDF8">22.86</text>
+  <!-- Buttons Matrix -->
+  <circle cx="43" cy="62" r="6" fill="#F1F5F9"/>
+  <circle cx="61" cy="62" r="6" fill="#F1F5F9"/>
+  <circle cx="79" cy="62" r="6" fill="#F1F5F9"/>
+  <circle cx="97" cy="62" r="6" fill="#EEF2FF"/>
+
+  <circle cx="43" cy="78" r="6" fill="#F1F5F9"/>
+  <circle cx="61" cy="78" r="6" fill="#F1F5F9"/>
+  <circle cx="79" cy="78" r="6" fill="#F1F5F9"/>
+  <circle cx="97" cy="78" r="6" fill="#EEF2FF"/>
+
+  <rect x="37" y="93" width="34" height="16" rx="4" fill="#E2E8F0"/>
+  <rect x="76" y="93" width="34" height="16" rx="4" fill="#4F46E5"/>
+
+  <!-- Gauge Arc & Scale on Right -->
+  <g transform="translate(130, 20)">
+    <rect x="0" y="0" width="85" height="100" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <!-- Arc gauge background -->
+    <path d="M15 65 A30 30 0 0 1 70 65" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- Colored zones -->
+    <path d="M15 65 A30 30 0 0 1 26 42" stroke="#38BDF8" stroke-width="8" fill="none"/>
+    <path d="M26 42 A30 30 0 0 1 50 35" stroke="#10B981" stroke-width="8" fill="none"/>
+    <path d="M50 35 A30 30 0 0 1 65 47" stroke="#F59E0B" stroke-width="8" fill="none"/>
+    <path d="M65 47 A30 30 0 0 1 70 65" stroke="#EF4444" stroke-width="8" fill="none"/>
+    <!-- Indicator needle -->
+    <circle cx="42.5" cy="65" r="4" fill="#0F172A"/>
+    <path d="M42.5 65L38 42" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <text x="20" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#065F46">Normal</text>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+# Local Configuration & Credentials Override
+config.local.php
+experiment-5/config.local.php
+experiment-6/config.local.php
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+.idea/
+.vscode/
+
+# Logs & Temporary Files
+*.log
+manual_extracted.txt

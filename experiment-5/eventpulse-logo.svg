@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="eventGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+    <linearGradient id="ticketBg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1C1917"/>
+      <stop offset="100%" stop-color="#0C0A09"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ticket Base Container -->
+  <rect width="64" height="64" rx="16" fill="url(#ticketBg)" stroke="#292524" stroke-width="2"/>
+
+  <!-- Pass / Ticket Outline with Notches -->
+  <path d="M16 18C16 16.8954 16.8954 16 18 16H46C47.1046 16 48 16.8954 48 18V28C45.7909 28 44 29.7909 44 32C44 34.2091 45.7909 36 48 36V46C48 47.1046 47.1046 48 46 48H18C16.8954 48 16 47.1046 16 46V36C18.2091 36 20 34.2091 20 32C20 29.7909 18.2091 28 16 28V18Z" stroke="url(#eventGrad)" stroke-width="2.5" fill="#292524" fill-opacity="0.4"/>
+
+  <!-- Pulse Waveform / Laser Beam -->
+  <path d="M22 32H27L29 25L33 39L37 28L39 34L41 32H44" stroke="url(#eventGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Star Icon Top Left -->
+  <circle cx="24" cy="22" r="2" fill="#FB923C"/>
+</svg>

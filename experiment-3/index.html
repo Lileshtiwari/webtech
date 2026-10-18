@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="User Registration Form Validation - Complete multi-step onboarding platform with client-side JavaScript validation.">
+  <title>User Registration Portal | Secure Account Setup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Brand Navigation Header -->
+  <header class="reg-header">
+    <div class="reg-container header-inner">
+      <a href="index.html" class="reg-brand">
+        <div class="brand-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <polyline points="16 11 18 13 22 9"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">Nexus<span style="color: #4F46E5;">Auth</span></span>
+          <span class="brand-sub">User Registration Portal</span>
+        </div>
+      </a>
+
+      <div class="header-badge">
+        <span>Step-by-Step Verification</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Wizard Card Container -->
+  <main class="reg-main">
+    <div class="reg-container">
+
+      <div class="wizard-card">
+        
+        <!-- Header Text -->
+        <div class="wizard-header">
+          <h1 class="wizard-title">Create Your Account</h1>
+          <p class="wizard-subtitle">Complete the guided registration below. All required details are validated in real-time.</p>
+        </div>
+
+        <!-- Progress Steps Bar -->
+        <div class="wizard-steps-bar" role="tablist">
+          <div class="step-node active" id="stepNode1">
+            <div class="step-circle">1</div>
+            <span class="step-label">Personal Details</span>
+          </div>
+          <div class="step-connector" id="connector1"></div>
+
+          <div class="step-node" id="stepNode2">
+            <div class="step-circle">2</div>
+            <span class="step-label">Address</span>
+          </div>
+          <div class="step-connector" id="connector2"></div>
+
+          <div class="step-node" id="stepNode3">
+            <div class="step-circle">3</div>
+            <span class="step-label">Security &amp; Terms</span>
+          </div>
+        </div>
+
+        <!-- Global Success Banner (Hidden until form passes) -->
+        <div id="globalSuccessBox" class="success-banner" style="display: none;">
+          <div class="success-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Registration completed successfully.</h3>
+            <p>Your user profile has been created and verified with zero errors.</p>
+          </div>
+        </div>
+
+        <!-- Form Elements -->
+        <form id="userRegForm" novalidate onsubmit="event.preventDefault(); validateForm();">
+
+          <!-- ================= STEP 1: Personal Details ================= -->
+          <div class="form-step-section active" id="stepSection1">
+            <h2 class="step-heading">Step 1: Personal Details</h2>
+            <p class="step-desc">Please provide your primary identity details as required for account registration.</p>
+
+            <!-- Full Name -->
+            <div class="form-group" id="grpFullName">
+              <label for="fullName">Full Name <span class="req">*</span></label>
+              <input type="text" id="fullName" class="form-input" placeholder="e.g. Rachel Adams" autocomplete="name">
+              <span class="error-msg" id="errFullName"></span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group" id="grpEmail">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" class="form-input" placeholder="rachel.adams@example.com" autocomplete="email">
+              <span class="error-msg" id="errEmail"></span>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group" id="grpMobile">
+              <label for="mobile">Mobile Number <span class="req">*</span></label>
+              <input type="tel" id="mobile" class="form-input" placeholder="9876543210" maxlength="10">
+              <span class="error-msg" id="errMobile"></span>
+            </div>
+
+            <!-- Gender & Date of Birth Row -->
+            <div class="form-row-2">
+              <!-- Gender -->
+              <div class="form-group" id="grpGender">
+                <label>Gender <span class="req">*</span></label>
+                <div class="gender-radio-group">
+                  <label class="gender-chip">
+                    <input type="radio" name="gender" value="Male">
+                    <span>Male</span>
+                  </label>
+                  <label class="gender-chip">
+                    <input type="radio" name="gender" value="Female">
+                    <span>Female</span>
+                  </label>
+                  <label class="gender-chip">
+                    <input type="radio" name="gender" value="Other">
+                    <span>Other</span>
+                  </label>
+                </div>
+                <span class="error-msg" id="errGender"></span>
+              </div>
+
+              <!-- Date of Birth -->
+              <div class="form-group" id="grpDob">
+                <label for="dob">Date of Birth <span class="req">*</span></label>
+                <input type="date" id="dob" class="form-input">
+                <span class="error-msg" id="errDob"></span>
+              </div>
+            </div>
+
+            <div class="step-actions-row">
+              <div></div>
+              <button type="button" class="btn btn-next" onclick="goToStep(2)">
+                <span>Next: Address Details &rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= STEP 2: Address ================= -->
+          <div class="form-step-section" id="stepSection2">
+            <h2 class="step-heading">Step 2: Address Information</h2>
+            <p class="step-desc">Enter your residential or communication address details.</p>
+
+            <!-- Address Field -->
+            <div class="form-group" id="grpAddress">
+              <label for="address">Residential Address <span class="req">*</span></label>
+              <textarea id="address" rows="4" class="form-input" placeholder="Apartment / Suite, Street Address, Area, Landmark..."></textarea>
+              <span class="error-msg" id="errAddress"></span>
+            </div>
+
+            <div class="step-actions-row">
+              <button type="button" class="btn btn-prev" onclick="goToStep(1)">
+                <span>&larr; Previous</span>
+              </button>
+              <button type="button" class="btn btn-next" onclick="goToStep(3)">
+                <span>Next: Account Security &rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= STEP 3: Security & Terms ================= -->
+          <div class="form-step-section" id="stepSection3">
+            <h2 class="step-heading">Step 3: Account Security &amp; Confirmation</h2>
+            <p class="step-desc">Create your login credentials and accept the terms of service.</p>
+
+            <!-- Password -->
+            <div class="form-group" id="grpPassword">
+              <label for="password">Password <span class="req">*</span></label>
+              <input type="password" id="password" class="form-input" placeholder="Minimum 6 characters">
+              <span class="error-msg" id="errPassword"></span>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group" id="grpConfirmPassword">
+              <label for="confirmPassword">Confirm Password <span class="req">*</span></label>
+              <input type="password" id="confirmPassword" class="form-input" placeholder="Re-enter your password">
+              <span class="error-msg" id="errConfirmPassword"></span>
+            </div>
+
+            <!-- Terms and Conditions Checkbox -->
+            <div class="form-group" id="grpTerms">
+              <label class="checkbox-container">
+                <input type="checkbox" id="termsCheck">
+                <span class="checkmark"></span>
+                <span>I have read and agree to the <a href="#" class="terms-link">Terms and Conditions</a> and Privacy Policy. <span class="req">*</span></span>
+              </label>
+              <span class="error-msg" id="errTerms"></span>
+            </div>
+
+            <div class="step-actions-row">
+              <button type="button" class="btn btn-prev" onclick="goToStep(2)">
+                <span>&larr; Previous</span>
+              </button>
+              <div class="submit-btn-group">
+                <button type="button" class="btn btn-reset" onclick="resetForm()">Reset Form</button>
+                <button type="submit" class="btn btn-submit" id="btnSubmit">Submit Registration</button>
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- Summary Receipt Display after submission -->
+        <div id="summaryReceipt" class="summary-receipt" style="display: none;">
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: #0E1726; margin-bottom: 1rem;">Submitted Registration Profile</h3>
+          <div class="receipt-grid">
+            <div class="r-row"><span class="r-lbl">Full Name:</span><span class="r-val" id="recName">-</span></div>
+            <div class="r-row"><span class="r-lbl">Email:</span><span class="r-val" id="recEmail">-</span></div>
+            <div class="r-row"><span class="r-lbl">Mobile:</span><span class="r-val" id="recMobile">-</span></div>
+            <div class="r-row"><span class="r-lbl">Gender:</span><span class="r-val" id="recGender">-</span></div>
+            <div class="r-row"><span class="r-lbl">Date of Birth:</span><span class="r-val" id="recDob">-</span></div>
+            <div class="r-row"><span class="r-lbl">Address:</span><span class="r-val" id="recAddress">-</span></div>
+          </div>
+          <button type="button" class="btn btn-next" style="margin-top: 1.5rem; width: 100%;" onclick="resetForm()">Register Another User</button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Clean Unified Footer -->
+  <footer class="reg-footer">
+    <div class="reg-container">
+      <div class="footer-center">
+        <div class="brand-icon-box" style="margin: 0 auto 1rem; width: 48px; height: 48px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <polyline points="16 11 18 13 22 9"/>
+          </svg>
+        </div>
+        <h3 style="color: #0E1726; font-size: 1.25rem; font-weight: 800; margin-bottom: 0.35rem;">NexusAuth User Registration Portal</h3>
+        <p style="color: #64748B; font-size: 0.95rem; max-width: 520px; margin: 0 auto 1.5rem; line-height: 1.6;">
+          An accessible, multi-step user onboarding platform featuring real-time client-side JavaScript validation.
+        </p>
+
+        <!-- Back to Main Button -->
+        <a href="../index.html" class="btn-return-home">
+          <span>&larr; Return to Home Screen</span>
+        </a>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 NexusAuth Registration Portal. All rights reserved.</span>
+        <span>Designed By Lilesh Kumar Tiwari</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="terraGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="globeGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Rounded Square -->
+  <rect width="64" height="64" rx="16" fill="url(#globeGrad)" stroke="#065F46" stroke-width="2"/>
+
+  <!-- Globe Circle -->
+  <circle cx="32" cy="32" r="20" stroke="url(#terraGrad)" stroke-width="2.5" fill="#022C22"/>
+
+  <!-- Latitude / Longitude Arcs -->
+  <ellipse cx="32" cy="32" rx="9" ry="20" stroke="#34D399" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="12" y1="32" x2="52" y2="32" stroke="#34D399" stroke-width="1.5"/>
+  <line x1="16" y1="22" x2="48" y2="22" stroke="#34D399" stroke-width="1" stroke-opacity="0.6"/>
+  <line x1="16" y1="42" x2="48" y2="42" stroke="#34D399" stroke-width="1" stroke-opacity="0.6"/>
+
+  <!-- Orbit Ring -->
+  <ellipse cx="32" cy="32" rx="26" ry="10" stroke="#38BDF8" stroke-width="1.8" transform="rotate(-25 32 32)"/>
+  <circle cx="53" cy="22" r="3" fill="#38BDF8"/>
+</svg>
