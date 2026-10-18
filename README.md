@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![WebTech Innovation Hero Banner](assets/images/top_hero_section.png)
+<img src="assets/images/platform_logo.png" alt="WebTech Platform Logo" width="240">
 
 # Innovate. Create. Lead the Future.
 ### Web Technologies Laboratory Engineering Suite — U21CS504
